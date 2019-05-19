@@ -4,7 +4,11 @@ import (
 	"math"
 )
 
-func NumberToWords(number int) string {
+func Parse(number int) string {
+	// Int limit
+	if number > 9223372036854775807 {
+		return "یه عدد خیلی خیلی خیلی بزرگ!"
+	}
 	switch {
 	case number < 10:
 		return oneDigit(number)
@@ -18,23 +22,23 @@ func NumberToWords(number int) string {
 }
 
 func oneDigit(number int) string {
-	return Ones[number]
+	return ones[number]
 }
 
 func twoDigits(number int) string {
 	if number < 20 {
-		return TenToTwenty[(number % 10)]
+		return tenToTwenty[(number % 10)]
 	} else if number%10 == 0 {
-		return Tens[(number/10)-2]
+		return tens[(number/10)-2]
 	}
-	return Tens[((number-(number%10))/10)-2] + " و " + oneDigit(number%10)
+	return tens[((number-(number%10))/10)-2] + " و " + oneDigit(number%10)
 }
 
 func threeDigits(number int) string {
 	if number%100 == 0 {
-		return Hundreds[(number/100) - 1]
+		return hundreds[(number/100) - 1]
 	}
-	return Hundreds[(number/100)-1] + " و " + NumberToWords(number%100)
+	return hundreds[(number/100)-1] + " و " + NumberToWords(number%100)
 }
 
 func bigOnes(number int) string {
@@ -47,7 +51,7 @@ func bigOnes(number int) string {
 
 	leftOver := number - (int(math.Pow(1000.0, float64(counter + 1))) * newValue)
 	if leftOver > 0 {
-		return NumberToWords(newValue) + " " + Classes[counter] + " و " + NumberToWords(leftOver)
+		return NumberToWords(newValue) + " " + classes[counter] + " و " + NumberToWords(leftOver)
 	}
-	return NumberToWords(newValue) + " " + Classes[counter]
+	return NumberToWords(newValue) + " " + classes[counter]
 }

@@ -5,12 +5,12 @@ import (
 )
 
 func TestMax(t *testing.T) {
-	num := NumberToWords(9223372036854775807)
+	num := Parse(9223372036854775807)
 	println(num)
 }
 
 func BenchmarkMax(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		NumberToWords(9223372036854775807)
+		Parse(9223372036854775807)
 	}
 }

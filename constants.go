@@ -1,6 +1,6 @@
 package NumberToPersianWords
 
-var Ones = []string{
+var ones = []string{
 	"صفر",
 	"یک",
 	"دو",
@@ -13,7 +13,7 @@ var Ones = []string{
 	"نه",
 }
 
-var Tens = []string{
+var tens = []string{
 	"بیست",
 	"سی",
 	"چهل",
@@ -24,7 +24,7 @@ var Tens = []string{
 	"نود",
 }
 
-var TenToTwenty = []string{
+var tenToTwenty = []string{
 	"ده",
 	"یازده",
 	"دوازده",
@@ -37,7 +37,7 @@ var TenToTwenty = []string{
 	"نوزده",
 }
 
-var Hundreds = []string{
+var hundreds = []string{
     "یکصد",
     "دویست",
     "سیصد",
@@ -49,7 +49,7 @@ var Hundreds = []string{
     "نهصد",
 }
 
-var Classes = []string{
+var classes = []string{
     "هزار",
     "میلیون",
     "میلیارد",

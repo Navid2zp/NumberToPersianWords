@@ -4,7 +4,7 @@ import (
 	"math"
 )
 
-func Parse(number int) string {
+func ParseInt(number int) string {
 	// Int limit
 	if number > 9223372036854775807 {
 		return "یه عدد خیلی خیلی خیلی بزرگ!"
@@ -38,7 +38,7 @@ func threeDigits(number int) string {
 	if number%100 == 0 {
 		return hundreds[(number/100) - 1]
 	}
-	return hundreds[(number/100)-1] + " و " + NumberToWords(number%100)
+	return hundreds[(number/100)-1] + " و " + ParseInt(number%100)
 }
 
 func bigOnes(number int) string {
@@ -51,7 +51,7 @@ func bigOnes(number int) string {
 
 	leftOver := number - (int(math.Pow(1000.0, float64(counter + 1))) * newValue)
 	if leftOver > 0 {
-		return NumberToWords(newValue) + " " + classes[counter] + " و " + NumberToWords(leftOver)
+		return ParseInt(newValue) + " " + classes[counter] + " و " + ParseInt(leftOver)
 	}
-	return NumberToWords(newValue) + " " + classes[counter]
+	return ParseInt(newValue) + " " + classes[counter]
 }

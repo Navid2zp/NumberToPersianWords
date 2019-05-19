@@ -5,10 +5,6 @@ import (
 )
 
 func ParseInt(number int) string {
-	// Int limit
-	if number > 9223372036854775807 {
-		return "یه عدد خیلی خیلی خیلی بزرگ!"
-	}
 	switch {
 	case number < 10:
 		return oneDigit(number)

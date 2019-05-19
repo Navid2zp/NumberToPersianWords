@@ -1,12 +1,13 @@
 package NumberToPersianWords
 
 import (
+	"fmt"
 	"testing"
 )
 
 func TestMax(t *testing.T) {
 	num := ParseInt(9223372036854775807)
-	println(num)
+	fmt.Println(num)
 }
 
 func BenchmarkMax(b *testing.B) {

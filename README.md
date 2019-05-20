@@ -10,7 +10,6 @@ go get github.com/Navid2zp/NumberToPersianWords
 
 ```
 import (
-	"math"
 	"github.com/Navid2zp/NumberToPersianWords"
 )
 

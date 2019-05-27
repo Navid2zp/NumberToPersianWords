@@ -27,7 +27,7 @@ func twoDigits(number int) string {
 	} else if number%10 == 0 {
 		return tens[(number/10)-2]
 	}
-	return tens[((number-(number%10))/10)-2] + " و " + oneDigit(number%10)
+	return tens[(number/10)-2] + " و " + oneDigit(number%10)
 }
 
 func threeDigits(number int) string {

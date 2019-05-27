@@ -25,16 +25,16 @@ func twoDigits(number int) string {
 	if number < 20 {
 		return tenToTwenty[(number % 10)]
 	} else if number%10 == 0 {
-		return tens[(number/10)-2]
+		return tens[(number/10) - 2]
 	}
-	return tens[((number-(number%10))/10)-2] + " و " + oneDigit(number%10)
+	return tens[math.Floor(number/10)-2] + " و " + oneDigit(number%10)
 }
 
 func threeDigits(number int) string {
 	if number%100 == 0 {
 		return hundreds[(number/100) - 1]
 	}
-	return hundreds[(number/100)-1] + " و " + ParseInt(number%100)
+	return hundreds[math.Floor(number/100)-1] + " و " + ParseInt(number%100)
 }
 
 func bigOnes(number int) string {

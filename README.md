@@ -8,7 +8,7 @@ go get github.com/Navid2zp/NumberToPersianWords
 
 ### Usage
 
-```
+```go
 import (
 	"fmt"
 	"github.com/Navid2zp/NumberToPersianWords"
